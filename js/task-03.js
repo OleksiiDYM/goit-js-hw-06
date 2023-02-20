@@ -13,16 +13,12 @@ const images = [
   },
 ];
 
-const galleryImage = document.querySelector(".gallery");
-
-const markup = images
-  .map(
-    (image) => `,<li class = "gallery__item">
-<img src=${image.url} alt=${image.alt}`
-  )
+const galleryEl = document.querySelector(".gallery");
+console.log(galleryEl);
+const imageEl = images
+  .map((image) => {
+    return `<li class="gallery__item"><img class="gallery__img" src="${image.url}" alt="${image.alt}"/>`;
+  })
   .join("");
-
-console.log(markup);
-
-galleryImage.insertAdjacentHTML("beforeend", markup);
-console.log(galleryImage);
+console.log(imageEl);
+galleryEl.insertAdjacentHTML("beforeend", imageEl);
